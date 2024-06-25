@@ -1,47 +1,44 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="container rounded-4">
+    <header class="p-5 mt-5 text-center">
+      <h1>Calculadora com VueJs</h1>
+      <p>Soma</p>
+    </header>
+    
+    <form>
+      <div class="row">
+        <div class="col">
+          <input class="form-control" type="number" placeholder="Digite o primeiro número">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-4">
+          <input class="form-control" type="number" placeholder="Digite o segundo número">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-4 mb-4">
+          <select class="form-control text-center">
+            <option value="somar">Somar</option>
+            <option value="subtrair">Subtrair</option>
+            <option value="dividir">Dividir</option>
+            <option value="multiplicar">Multiplicar</option>
+          </select>
+        </div>
+      </div>
+      
+    </form>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.container {
+  background-color: rgba(19, 27, 34, 0.534);
+  color: antiquewhite;
 }
 </style>
