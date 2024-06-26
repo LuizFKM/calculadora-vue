@@ -74,13 +74,20 @@ const getFiltroAritmetica = () => {
   
 }
 
+const resultNan = () => {
+  const {resultado} = estado
+  if(isNaN(resultado)){
+    return estado.resultado = 'Digite outro número'
+  }
+}
+
 </script>
 
 <template>
   <div class="container rounded-4">
     <Cabecalho :filtros-aritmetica="estado.filtro"/>
     <Formulario :primeiro-numero="primeiroNumero" :segundo-numero="segundoNumero" :estado-filtro="evento => {estado.filtro = evento.target.value; getFiltroAritmetica()}" />
-    <Resultado :filtro="getFiltroAritmetica" :resultado="estado.resultado"/>
+    <Resultado :filtro="getFiltroAritmetica" :resultado="estado.resultado" :resultado-nan="resultNan()"/>
   </div>
 </template>
 
